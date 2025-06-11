@@ -114,4 +114,86 @@ export async function POST(request: Request) {
       })
 
       if (!category) {
-        console.error(`
+        console.error('Category not found')
+        return NextResponse.json(
+          { error: 'Category not found' },
+          { status: 404 }
+        )
+      }
+    }
+
+    // Validate transaction data
+    const validationResult = TransactionSchema.safeParse(body)
+    if (!validationResult.success) {
+      console.error('Invalid transaction data:', validationResult.error)
+      return NextResponse.json(
+        { error: 'Invalid transaction data', details: validationResult.error },
+        { status: 400 }
+      )
+    }
+
+    // Save the transaction
+    const transaction = await saveTransaction({
+      ...validationResult.data,
+      userId: user.id
+    })
+
+    if (!transaction) {
+      console.error('Failed to create transaction')
+      return NextResponse.json(
+        { error: 'Failed to create transaction' },
+        { status: 500 }
+      )
+    }
+
+    console.log('Transaction created successfully:', {
+      id: transaction.id,
+      amount: transaction.amount,
+      categoryId: transaction.categoryId
+    })
+
+    return NextResponse.json(transaction)
+  } catch (error) {
+    console.error('Error in POST /api/transactions:', error)
+    return NextResponse.json(
+      { error: 'Failed to create transaction' },
+      { status: 500 }
+    )
+  }
+}
+
+export async function DELETE(request: Request) {
+  try {
+    const session = await getServerSession(authOptions)
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const { searchParams } = new URL(request.url)
+    const id = searchParams.get('id')
+
+    if (!id) {
+      return NextResponse.json(
+        { error: 'Transaction ID is required' },
+        { status: 400 }
+      )
+    }
+
+    const user = await prisma.user.findUnique({
+      where: { email: session.user.email }
+    })
+
+    if (!user) {
+      return NextResponse.json({ error: 'User not found' }, { status: 404 })
+    }
+
+    await deleteTransaction(id, user.id)
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error('Error in DELETE /api/transactions:', error)
+    return NextResponse.json(
+      { error: 'Failed to delete transaction' },
+      { status: 500 }
+    )
+  }
+}

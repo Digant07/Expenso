@@ -171,7 +171,7 @@ export async function GET(request: Request) {
     }
     
     // Filter expense categories
-    const expenseCategories = categories.filter(category => category.type === 'EXPENSE')
+    const expenseCategories = categories.filter((category: { type: string }) => category.type === 'EXPENSE')
     
     if (expenseCategories.length === 0) {
       return NextResponse.json({ error: 'No expense categories found. Please create expense categories first.' }, { status: 400 })

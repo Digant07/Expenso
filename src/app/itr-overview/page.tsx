@@ -52,14 +52,32 @@ const initialFormState = {
   regimePreference: 'both' // old, new, both
 }
 
+type RegimeTaxResult = {
+  taxableIncome: number;
+  basicTax: number;
+  cess: number;
+  rebate: number;
+  totalTax: number;
+  potentialSavings: Record<string, number>;
+};
+
+type TaxResults = {
+  old: RegimeTaxResult | null;
+  new: RegimeTaxResult | null;
+};
+
 export default function ITROverviewPage() {
   const { t } = useTranslation()
   const [formData, setFormData] = useState(initialFormState)
   const [showResults, setShowResults] = useState(false)
-  const [taxResults, setTaxResults] = useState({ old: null, new: null })
+  const [taxResults, setTaxResults] = useState<TaxResults>({ old: null, new: null })
 
   // Handle form input changes
-  const handleInputChange = (category: any, field: any, value: any) => {
+  const handleInputChange = (
+    category: 'income' | 'deductions',
+    field: string,
+    value: any
+  ) => {
     const numValue = value === '' ? 0 : Number(value)
     setFormData(prev => ({
       ...prev,
@@ -159,7 +177,7 @@ export default function ITROverviewPage() {
   }
 
   // Helper function to calculate tax for a specific slab structure
-  const calculateTaxForSlab = (income, slabs) => {
+  const calculateTaxForSlab = (income: number, slabs: { limit: number; rate: number }[]) => {
     let remainingIncome = income
     let tax = 0
 
@@ -186,7 +204,7 @@ export default function ITROverviewPage() {
   }
 
   // Format currency
-  const formatCurrency = (amount) => {
+  const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',
       currency: 'INR',
@@ -196,16 +214,16 @@ export default function ITROverviewPage() {
 
   // Determine better regime
   const determineBetterRegime = () => {
-    if (!taxResults.old || !taxResults.new) return null
-    
+    if (!taxResults.old || !taxResults.new) return null;
+
     if (taxResults.old.totalTax < taxResults.new.totalTax) {
-      return 'old'
+      return 'old';
     } else if (taxResults.new.totalTax < taxResults.old.totalTax) {
-      return 'new'
+      return 'new';
     } else {
-      return 'equal'
+      return 'equal';
     }
-  }
+  };
 
   const betterRegime = determineBetterRegime()
 
