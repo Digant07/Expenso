@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
-import { authOptions } from '../../auth/[...nextauth]/route'
+import { authOptions } from '../../auth/[...nextauth]/options'
+import { prisma } from '@/lib/prisma'
 import { v4 as uuidv4 } from 'uuid'
 
 // Reference to the same global storage used in other files

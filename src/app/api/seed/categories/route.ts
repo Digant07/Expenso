@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
-import { authOptions } from '../../auth/[...nextauth]/route'
+import { authOptions } from '../../auth/[...nextauth]/options'
 import { v4 as uuidv4 } from 'uuid'
 import fs from 'fs'
 import path from 'path'
 import { cookies } from 'next/headers'
+import { prisma } from '@/lib/prisma'
 
 // Storage key for localStorage
 const CATEGORIES_STORAGE_KEY = 'expense-tracker-categories'

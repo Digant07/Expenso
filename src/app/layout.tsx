@@ -4,9 +4,15 @@ import { Providers } from './providers'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 import { ToastContainer } from 'react-toastify'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export const metadata: Metadata = {
   title: 'Expenso - Expense Tracker',
@@ -18,11 +24,6 @@ export const metadata: Metadata = {
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
   }
 }
 

@@ -1,16 +1,15 @@
-import { NextAuthOptions, Session } from "next-auth"
+import { NextAuthOptions, Session, DefaultSession } from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import GoogleProvider from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { prisma } from "@/lib/prisma"
 import bcrypt from "bcrypt"
 
-interface SessionInterface extends Session {
-  user?: {
-    name?: string | null
-    email?: string | null
-    image?: string | null
-    id?: string | null
+declare module "next-auth" {
+  interface Session {
+    user: {
+      id: string
+    } & DefaultSession["user"]
   }
 }
 
@@ -73,9 +72,9 @@ export const authOptions: NextAuthOptions = {
     signIn: "/auth/signin",
   },
   callbacks: {
-    async session({ session, token }: { session: SessionInterface, token: any }) {
-      if (session.user && token.sub) {
-        session.user.id = token.sub
+    async session({ session, token }) {
+      if (session.user) {
+        session.user.id = token.sub as string
       }
       return session
     },
