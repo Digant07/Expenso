@@ -270,22 +270,10 @@ export default function HelpPage() {
           <div>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('help.contactTitle' as any)}</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">{t('help.contactDescription' as any)}</p>
-            <div className="flex items-center mt-3">
-              <FiMail className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
-              <span className="text-gray-800 dark:text-gray-200 font-medium">
-                Contact the developer: princeshah.23.cse@iite.indusuni.ac.in
-              </span>
-            </div>
             <div className="flex items-center mt-2">
               <FiMail className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
               <span className="text-gray-800 dark:text-gray-200 font-medium">
                 Contact the developer: digantmalviya.23.cse@iite.indusuni.ac.in
-              </span>
-            </div>
-            <div className="flex items-center mt-2">
-              <FiMail className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
-              <span className="text-gray-800 dark:text-gray-200 font-medium">
-                Contact the developer: premladani.23.it@iite.indusuni.ac.in
               </span>
             </div>
           </div>
