@@ -1,88 +1,89 @@
-# 💰 Expenso
+# Expenso
 
-A modern expense tracker application built for a hackathon to help you manage your finances with style!
+A modern expense tracker application built for a hackathon to help you manage your finances efficiently.
 
-## ✨ Features
+## Features
 
-- 🔐 **User Authentication** — Secure Google Sign-In / OAuth
-- 💰 **Expense Management** — Track your income and expenses effortlessly
-- 📊 **Visual Dashboards** — Beautiful charts and spending analysis
-- 📱 **Mobile Friendly** — Responsive design that works on all devices
-- 📅 **Recurring Transactions** — Set and forget your regular expenses
-- 🎯 **Budget Goals** — Set targets and get alerts when you're overspending
-- 📈 **Analytics** — Deep dive into your spending patterns and trends
-- 💱 **Multi-Currency** — Track expenses in different currencies
-- 📥 **Import/Export** — Backup and restore your financial data
-- ☁️ **Offline Mode** — Keep tracking even without internet
-- 📱 **PWA Ready** — Install as an app on your phone
-- 📆 **Calendar View** — See transactions at a glance
-- 🌓 **Dark/Light Theme** — Choose your vibe
+- User Authentication with Google Sign-In / OAuth
+- Complete expense and income tracking
+- Interactive dashboards with spending analysis
+- Fully responsive mobile-friendly design
+- Recurring transaction support
+- Budget goals and spending alerts
+- Advanced analytics and spending trends
+- Multi-currency support
+- Data import and export functionality
+- Offline mode with data sync
+- Progressive Web App (PWA) capabilities
+- Calendar view for transaction tracking
+- Dark and Light theme options
 
-## 🛠️ Built With
+## Tech Stack
 
-- **Next.js 14** — React framework with App Router
-- **TypeScript** — Type-safe code
-- **Tailwind CSS** — Beautiful styling
-- **NextAuth.js** — Easy authentication
-- **Prisma** — Database management
-- **Chart.js** — Cool data visualization
+- Next.js 14 with App Router
+- TypeScript for type safety
+- Tailwind CSS for styling
+- NextAuth.js for authentication
+- Prisma as the database ORM
+- Chart.js for data visualization
 
-## 🚀 Quick Start
+## Prerequisites
 
-### Prerequisites
-- Node.js 18+ installed
-- npm or yarn
-- Git
+- Node.js 18 or higher
+- npm or yarn package manager
+- Git for version control
 
-### Setup
+## Getting Started
 
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/Digant07/Expenso.git
-   cd Expenso
-   ```
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Digant07/Expenso.git
+cd Expenso
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
+### 3. Configure Environment Variables
+```bash
+cp .env.example .env.local
+```
+Edit `.env.local` with your configuration values (database URL, OAuth credentials, etc.)
 
-4. **Run the dev server**
-   ```bash
-   npm run dev
-   ```
+### 4. Start the Development Server
+```bash
+npm run dev
+```
 
-5. **Open in browser**
-   Visit [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
-├── app/           # Pages and layouts
-├── components/    # Reusable components
-├── lib/           # Utilities and helpers
-├── styles/        # Global styles
-└── types/         # TypeScript types
+├── app/           # Next.js App Router pages and layouts
+├── components/    # Reusable React components
+├── lib/           # Utility functions and configurations
+├── styles/        # Global styles and theme
+└── types/         # TypeScript type definitions
 ```
 
-## 🤝 Want to Contribute?
+## Contributing
 
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/cool-feature`)
-3. Commit your changes (`git commit -m 'Add cool feature'`)
-4. Push to branch (`git push origin feature/cool-feature`)
+Contributions are welcome! Here's how to get started:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Make your changes and commit (`git commit -m 'Add your feature'`)
+4. Push to your branch (`git push origin feature/your-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
-MIT License — Feel free to use this!
+MIT License - Feel free to use this project however you like.
 
----
+## Questions or Issues?
 
-**Made with ❤️ for the hackathon**
+If you encounter any issues or have suggestions, feel free to open an issue on GitHub.
