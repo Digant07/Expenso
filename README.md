@@ -1,106 +1,88 @@
-# Expenso
+# 💰 Expenso
 
-A modern, feature-rich expense tracker application designed to help you manage your finances efficiently with an intuitive user interface and powerful analytics.
+A modern expense tracker application built for a hackathon to help you manage your finances with style!
 
 ## ✨ Features
 
-### Core Functionality
-- **User Authentication** — Secure Google Sign-In / OAuth integration
-- **Expense Management** — Complete CRUD operations for expenses and income tracking
-- **Financial Goals** — Set budgeting goals with real-time alerts
+- 🔐 **User Authentication** — Secure Google Sign-In / OAuth
+- 💰 **Expense Management** — Track your income and expenses effortlessly
+- 📊 **Visual Dashboards** — Beautiful charts and spending analysis
+- 📱 **Mobile Friendly** — Responsive design that works on all devices
+- 📅 **Recurring Transactions** — Set and forget your regular expenses
+- 🎯 **Budget Goals** — Set targets and get alerts when you're overspending
+- 📈 **Analytics** — Deep dive into your spending patterns and trends
+- 💱 **Multi-Currency** — Track expenses in different currencies
+- 📥 **Import/Export** — Backup and restore your financial data
+- ☁️ **Offline Mode** — Keep tracking even without internet
+- 📱 **PWA Ready** — Install as an app on your phone
+- 📆 **Calendar View** — See transactions at a glance
+- 🌓 **Dark/Light Theme** — Choose your vibe
 
-### Analytics & Insights
-- **Visual Dashboards** — Comprehensive spending analysis with interactive charts
-- **Advanced Analytics** — Detailed trends and financial insights
-- **Calendar View** — Track transactions by date with an intuitive calendar interface
+## 🛠️ Built With
 
-### User Experience
-- **Responsive Design** — Fully optimized for mobile, tablet, and desktop devices
-- **Dark/Light Theme** — Customizable interface theme preferences
-- **Offline Support** — Full offline mode with data synchronization
-- **PWA Capabilities** — Install as a standalone application
+- **Next.js 14** — React framework with App Router
+- **TypeScript** — Type-safe code
+- **Tailwind CSS** — Beautiful styling
+- **NextAuth.js** — Easy authentication
+- **Prisma** — Database management
+- **Chart.js** — Cool data visualization
 
-### Advanced Features
-- **Recurring Transactions** — Automate regular income and expense entries
-- **Multi-Currency Support** — Track expenses in multiple currencies
-- **Data Import/Export** — Seamlessly import and export financial data
+## 🚀 Quick Start
 
-## 🛠️ Tech Stack
+### Prerequisites
+- Node.js 18+ installed
+- npm or yarn
+- Git
 
-| Technology | Purpose |
-|-----------|---------|
-| **Next.js 14** | React framework with App Router |
-| **TypeScript** | Type-safe application development |
-| **Tailwind CSS** | Utility-first CSS framework |
-| **NextAuth.js** | Authentication and authorization |
-| **Prisma** | Modern database ORM |
-| **Chart.js** | Data visualization and analytics |
+### Setup
 
-## 📋 Prerequisites
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/Digant07/Expenso.git
+   cd Expenso
+   ```
 
-Before getting started, ensure you have the following installed:
-- **Node.js 18+** — [Download here](https://nodejs.org)
-- **npm or yarn** — Package manager (comes with Node.js)
-- **Git** — Version control system
-- **Code Editor** — VS Code recommended
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## 🚀 Getting Started
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   ```
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/Expenso.git
-cd Expenso
-```
+4. **Run the dev server**
+   ```bash
+   npm run dev
+   ```
 
-### 2. Install Dependencies
-```bash
-npm install
-```
-
-### 3. Configure Environment Variables
-```bash
-cp .env.example .env.local
-```
-Then edit `.env.local` and add your configuration values (API keys, database URL, etc.)
-
-### 4. Run the Development Server
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+5. **Open in browser**
+   Visit [http://localhost:3000](http://localhost:3000)
 
 ## 📁 Project Structure
 
 ```
 src/
-├── app/                    # Next.js App Router pages and layouts
-├── components/             # Reusable React components
-├── lib/                    # Utility functions, configs, and helpers
-├── styles/                 # Global CSS and styling
-└── types/                  # TypeScript type definitions and interfaces
+├── app/           # Pages and layouts
+├── components/    # Reusable components
+├── lib/           # Utilities and helpers
+├── styles/        # Global styles
+└── types/         # TypeScript types
 ```
 
-## 🤝 Contributing
+## 🤝 Want to Contribute?
 
-We welcome contributions! Here's how to get involved:
-
-1. **Fork the repository** — Create your own copy
-2. **Create a feature branch** — `git checkout -b feature/amazing-feature`
-3. **Commit your changes** — `git commit -m 'Add some amazing feature'`
-4. **Push to the branch** — `git push origin feature/amazing-feature`
-5. **Open a Pull Request** — Submit your changes for review
-
-Please ensure your code follows the project's style guidelines and includes appropriate tests.
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/cool-feature`)
+3. Commit your changes (`git commit -m 'Add cool feature'`)
+4. Push to branch (`git push origin feature/cool-feature`)
+5. Open a Pull Request
 
 ## 📝 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
-## 📞 Support
-
-For issues, questions, or suggestions, please [open an issue](https://github.com/Digant07/Expenso/issues) on GitHub.
+MIT License — Feel free to use this!
 
 ---
 
-**Happy tracking! 💰**
+**Made with ❤️ for the hackathon**
